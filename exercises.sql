@@ -55,8 +55,3 @@ SELECT room_id, COUNT(*) AS total_admissions
 FROM admissions
 GROUP BY room_id;
 
--- 15. Constraints exercise: 
-SELECT * FROM patients
-WHERE email IS NULL OR email = '';
-
-
