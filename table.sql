@@ -13,7 +13,7 @@ CREATE TABLE departments (
 
 -- Patients table
 CREATE TABLE patients (
-    patient_id INT(11) ZEROFILL PRIMARY KEY AUTO_INCREMENT,
+    patient_id INT(11) PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     gender ENUM('Male', 'Female', 'Other') NOT NULL,
