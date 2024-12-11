@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS prescriptions;
 DROP TABLE IF EXISTS admissions;
 DROP TABLE IF EXISTS appointments;
 DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS active_admissions;
 SET foreign_key_checks = 1;
 
 -- Departments table
@@ -62,7 +63,7 @@ CREATE TABLE doctors (
     specialization VARCHAR(50) NOT NULL,
     phone_number VARCHAR(15) NOT NULL,
     email VARCHAR(100) UNIQUE,
-    department_id INT(11) NOT NULL, -- Fixed to NOT NULL
+    department_id INT(11) NOT NULL, 
     FOREIGN KEY(department_id) REFERENCES departments(department_id)
 );
 

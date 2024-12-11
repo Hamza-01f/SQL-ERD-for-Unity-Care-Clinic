@@ -55,3 +55,32 @@ SELECT room_id, COUNT(*) AS total_admissions
 FROM admissions
 GROUP BY room_id;
 
+-- 15. Constraints exercise: 
+SELECT * FROM patients
+WHERE email IS NULL OR email = '';
+
+-- 16. Join exercise:
+SELECT a.appointment_date, a.appointment_time, p.first_name AS patient_first_name, p.last_name AS patient_last_name, 
+       d.first_name AS doctor_first_name, d.last_name AS doctor_last_name
+FROM appointments a
+JOIN patients p ON a.patient_id = p.patient_id
+JOIN doctors d ON a.doctor_id = d.doctor_id;
+
+-- 17. DELETE exercise: 
+DELETE FROM appointments
+WHERE appointment_date < '2024-01-01';
+-- 18. UPDATE exercise:
+UPDATE departments
+SET department_name = 'Cancer Treatment'
+WHERE department_name = 'Oncology';
+
+-- 19. HAVING Clause exercise: 
+SELECT gender , COUNT(gender) AS patient_count
+FROM patients
+GROUP BY gender
+HAVING COUNT(*) >= 2;
+
+-- 20. Create a view exercise: 
+CREATE VIEW active_admissions AS
+SELECT * FROM admissions
+WHERE discharge_date IS NULL;
